@@ -22,6 +22,7 @@ $ rm -r VA # ....
 3. Update or import your database:
 
 ```
+$ source advent-pyenv/bin/activate  # activate virtual env
 (advent-pyenv) $ find . -name "*.djv" | xargs db-djv-pg import
 ```
 
@@ -30,30 +31,70 @@ If your want to overwrite existing definitions (slower), add `-o` to the end of 
 ## If You Want to Create Your Own Hashes, Read Further
 
 You will need:
-1. Means of recording TV audio (note that depending on your country and TV provider this might be considered illegal)
-2. A basic audio editor capable of track trimming (plus some familiarity with it)
 
-Process:
+1. [installed](https://github.com/denis-stepanov/advent#installation) and [configured](https://github.com/denis-stepanov/advent#audio-inputs) AdVent (only sound capturing part; TV control module is not required);
+2. a basic audio editor capable of track trimming (plus some familiarity with it).
 
-### Step 1: Record TV Audio
-As far as possible, stick to the same audio source that you will be using when running AdVent. If you have got a choice between analog and digital recording, always prefer digital. Stereo sources are OK (DejaVu will treat them as two-in-one).
+Example below is given for Linux Fedora, AdVent configured to listen PulseAudio output (see ["Capturing a TV Webcast"](https://github.com/denis-stepanov/advent#capturing-a-tv-web-cast)) and [Audacity](https://www.audacityteam.org/) as sound editor.
 
-Usually the simplest way not requiring messing up with cables is to record a portion of a TV broadcast from Internet. On Linux, one can [create a PulseAudio monitor device](https://wiki.archlinux.org/title/PulseAudio/Examples#Monitor_specific_output). Once this is done, you can use any recorder to capture sound (like a very basic KDE Recorder).
+### Step 1: Record TV Audio Containing Ads
+
+Usually the simplest way not requiring messing up with cables is to record a portion of a TV broadcast from Internet. As far as possible, stick to the same audio source that you will be using when running AdVent. If you have got a choice between analog and digital recording, always prefer digital. Stereo sources are OK (Dejavu will treat them as two-in-one).
+
+Preferred audio format to produce is PCM (WAV), 16 bit low endian signed, 44.1 kHz, 2 channels (stereo). Many audio tools will produce this by default. Other formats or parameters have not been tested and may or may not work.
+
+If you configured AdVent for PulseAudio input, you should be OK to record with default settings:
+
+```
+$ parecord -v test.wav
+Opening a recording stream with sample specification 's16le 2ch 44100Hz' and channel map 'front-left,front-right'.
+Connection established.
+Stream successfully created.
+Buffer metrics: maxlength=4194304, fragsize=352800
+Using sample spec 's16le 2ch 44100Hz', channel map 'front-left,front-right'.
+Connected to device alsa_output.pci-0000_00_1b.0.analog-stereo.monitor (index: 45, suspended: no).
+Time: 4.608 sec; Latency: 608164 usec.
+...
+(stop with Ctrl-C)
+$
+```
+
+You can also use recorder of your choice, including Audacity.
 
 ### Step 2: Single Out a Jingle of Interest
-Load the recording into an audio editor (like Audacity), locate your ads jingle, trim it and export. Once located, you can run AdVent in background to confirm that it does not recognize your new jingle. Make sure your jingle record is between 2 and 5 seconds long (below 2 it might not be detected reliably; above 5 it would be detected with certainty, so no need to waste computer resources). If a jingle is surrounded with silent periods, you can include short parts of those before and after in order to improve detection. Take a note of jingle position (before or after the ads). Export the result into a WAV file and give it a name as per naming convention described below.
+
+Load the recording into Audacity: `File` > `Open...`. Seek through the track to locate the ad jingle; use zoom if needed. Select the desired interval by clicking in the track area on the jingle start and dragging mouse to the jingle end. It is recommended that your jingle record is between 2 and 5 seconds long (below 2 it might not be detected reliably; above 5 it would be detected with certainty, so no need to waste computer resources). If a jingle is surrounded with silent periods, you can include short parts of those before and after in order to improve detection. Take a note of jingle position (before or after the ads).
+
+![Selecting a jingle in Audacity](https://user-images.githubusercontent.com/22733222/184440958-9c4f2b8a-0f34-4633-8c2a-840dbe57ff9f.png)
+
+At this point is it recommended to test the jingle with AdVent to make sure that you are not looking at the piece already known. Run AdVent in console, then press `Play` in Audacity.
+
+```
+(advent-pyenv) $ advent
+TV starts unmuted
+Started 4 listening thread(s)
+............oooo......oooo.....
+(Ctrl-C)
+```
+
+If AdVent does not detect your jingle during playback, you are good to continue. Trim the track: `Edit` > `Remove Special` > `Trim Audio`; then shift the result to the beginning: `Tracks` > `Align Tracks` > `Start to Zero`. Export the track: `File` > `Export` > `Export as WAV`. Give it a name as per naming convention [described below](#jingle-naming-convention); leave the encoding `Signed 16-bit PCM` (default). No need to fill any metadata; just click `OK`.
 
 ### Step 3: Generate a Hash
+
 Fingerprint the jingle using standard DejaVu approach:
+
 ```
 $ dejavu.py -f <path-to-jingle-folder> wav
 ```
+
 It is recommended to keep already processed jingles around in the case fingerprinting needs to be reexecuted. DejaVu will recognize and skip records which have already been submitted.
 
 Export the hash for future use:
+
 ```
 $ db-djv-pg.py export <jingle-name>
 ```
+
 where `jingle-name` is a name defined in step 2.
 
 If you consider that your hashes could be of use for others, please submit a pull request. Make sure you follow the naming conventions.
