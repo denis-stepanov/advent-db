@@ -1,25 +1,34 @@
 # AdVent Database
+
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
 ## Database Population or Update for Regular Users
-It is assumed that you have installed AdVent. To pull the latest updates into your database:
 
-1. Download the latest snapshot (clone or get a zip):
+It is assumed that you have [installed AdVent](https://github.com/denis-stepanov/advent#installation). To pull the latest updates into your database:
+
+1. Download the latest snapshot (clone, pull or get a zip):
+
 ```
 $ git clone https://github.com/denis-stepanov/advent-db.git
-$ cd advent-db
+$ cd advent-db/DB
 ```
+
 2. (recommended) delete countries or TV channels you are not expected to use. This will decrease CPU load and reduce the number of false positives while running AdVent:
+
 ```
-$ rm -r DB/VA # DB/....
+$ rm -r VA # ....
 ```
+
 3. Update or import your database:
+
 ```
-$ find DB -name "*.djv" | xargs db-djv-pg.py import
+(advent-pyenv) $ find . -name "*.djv" | xargs db-djv-pg import
 ```
+
 If your want to overwrite existing definitions (slower), add `-o` to the end of the import command.
 
 ## If You Want to Create Your Own Hashes, Read Further
+
 You will need:
 1. Means of recording TV audio (note that depending on your country and TV provider this might be considered illegal)
 2. A basic audio editor capable of track trimming (plus some familiarity with it)
