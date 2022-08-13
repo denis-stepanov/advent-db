@@ -4,7 +4,7 @@ This is a database for [AdVent](https://github.com/denis-stepanov/advent), the T
 
 ## Database Population or Update for Regular Users
 
-It is assumed that you have [installed AdVent](https://github.com/denis-stepanov/advent/#installation). Make sure to switch to its virtual environment:
+It is assumed that you have [installed AdVent](https://github.com/denis-stepanov/advent#installation). Make sure to switch to its virtual environment:
 
 ```
 $ source advent-pyenv/bin/activate
@@ -39,7 +39,7 @@ If your want to overwrite existing definitions (slower), add `-o` to the end of 
 
 You will need:
 
-1. [installed](https://github.com/denis-stepanov/advent/#installation) and [configured](https://github.com/denis-stepanov/advent/#audio-inputs) AdVent (only sound capturing part; TV control module is not required);
+1. [installed](https://github.com/denis-stepanov/advent#installation) and [configured](https://github.com/denis-stepanov/advent#audio-inputs) AdVent (only sound capturing part; TV control module is not required);
 2. a basic audio editor capable of track trimming (plus some familiarity with it).
 
  Make sure to switch to AdVent virtual environment:
@@ -50,7 +50,7 @@ $ source advent-pyenv/bin/activate
 
 where `advent-pyenv` is the folder created during AdVent installation.
 
-Example below is given for Linux Fedora, AdVent configured to listen PulseAudio output (see ["Capturing a TV Webcast"](https://github.com/denis-stepanov/advent/#capturing-a-tv-web-cast)) and [Audacity](https://www.audacityteam.org/) as sound editor.
+Example below is given for Linux Fedora, AdVent configured to listen PulseAudio output (see ["Capturing a TV Webcast"](https://github.com/denis-stepanov/advent#capturing-a-tv-web-cast)) and [Audacity](https://www.audacityteam.org/) as sound editor.
 
 ### Step 1: Record TV Audio Containing Ads
 
