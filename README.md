@@ -140,21 +140,21 @@ If you consider that your hashes could be of use for others, please submit a pul
 
 ```
 11_2..2_333333_4..4_5..5.ext
-FR_TF1_220214_EVENING1_0.djv
+FR_TF1_220214_EVENING1_3.djv
 ```
 
 1. [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) two letter country code
 2. TV channel name
 3. Jingle capture date YYMMDD (approximate if unsure)
 4. Jingle name (free format, alphanumeric)
-5. Binary flags in hex
+5. Binary flags in decimal
    1. 0x1 - Jingle starts the ads (0 if unknown)
    2. 0x2 - Jingle ends the ads (0 if unknown)
    3. ...
 6. File extension indicates recognizer provider
    1. djv - [Dejavu](https://github.com/denis-stepanov/dejavu)
    
-If a jingle can be seen both at entry and exit, the flag would be 0x1 & 0x2 = 0x3 = decimal 3 (i.e., just 3 in the name).
+If a jingle can be seen both at entry and exit, the flags would be `0x1 & 0x2 = 0x3` = decimal 3 (i.e., just 3 in the name).
 
 Unless you have a specific reason, it is recommended to use capital letters only and to avoid any special characters (spaces, apostrophs, punctuation...).
 
