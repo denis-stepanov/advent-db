@@ -154,7 +154,7 @@ FR_TF1_220214_EVENING1_0.djv
 6. File extension indicates recognizer provider
    1. djv - [Dejavu](https://github.com/denis-stepanov/dejavu)
    
-If a jingle can be seen both at entry and exit, the flag woul be 0x1 & 0x2 = 0x3 = decimal 3 (i.e., just 3 in the name).
+If a jingle can be seen both at entry and exit, the flag would be 0x1 & 0x2 = 0x3 = decimal 3 (i.e., just 3 in the name).
 
 Unless you have a specific reason, it is recommended to use capital letters only and to avoid any special characters (spaces, apostrophs, punctuation...).
 
