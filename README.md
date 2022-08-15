@@ -50,7 +50,7 @@ $ source advent-pyenv/bin/activate
 
 where `advent-pyenv` is the folder created during AdVent installation.
 
-Example below is given for Linux Fedora, AdVent configured to listen PulseAudio output (see ["Capturing a TV Webcast"](https://github.com/denis-stepanov/advent#capturing-a-tv-web-cast)) and [Audacity](https://www.audacityteam.org/) as sound editor.
+Example below is given for Linux Fedora, AdVent configured to listen to PulseAudio output (see ["Capturing a TV Webcast"](https://github.com/denis-stepanov/advent#capturing-a-tv-web-cast)) and [Audacity](https://www.audacityteam.org/) as sound editor.
 
 ### Step 1: Record TV Audio Containing Ads
 
@@ -78,7 +78,7 @@ You can also use recorder of your choice, including Audacity. The file name is n
 
 ### Step 2: Single Out a Jingle of Interest
 
-Load the recording into Audacity: `File` > `Open...`. Seek through the track to locate the ad jingle; use zoom if needed. Select the desired interval by clicking in the track area on the jingle start and dragging mouse to the jingle end. It is recommended that your jingle record is between 2 and 5 seconds long (below 2 it might not be detected reliably; above 5 it would be detected with certainty, so no need to waste computer resources). If a jingle is surrounded with silent periods, you can include short parts of those before and after in order to improve detection. Take a note of jingle position (before or after the ads).
+Load the recording into Audacity: `File` > `Open...`. Seek through the track to locate the ad jingle; use zoom if needed. Select the desired interval by clicking in the track area on the jingle start and dragging mouse to the jingle end. Whenever possible, keep your jingle record at least three seconds long (two seconds is acceptable; below that it might not be detected reliably). If a jingle is surrounded with silent periods, you can include short parts of those before and after in order to improve detection. Take a note of jingle position (before or after the ads).
 
 ![Selecting a jingle in Audacity](https://user-images.githubusercontent.com/22733222/184440958-9c4f2b8a-0f34-4633-8c2a-840dbe57ff9f.png)
 
