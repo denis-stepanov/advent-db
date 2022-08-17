@@ -85,7 +85,9 @@ Load the recording into Audacity: `File` > `Open...`. Seek through the track to 
 At this point is it recommended to test the jingle with AdVent to make sure that you are not looking at the piece already known. Run AdVent in console, then press `Play` in Audacity.
 
 ```
-(advent-pyenv) $ advent
+(advent-pyenv) $ advent -t nil
+AdVent v1.1.0
+TV control is nil
 TV starts unmuted
 Started 4 listening thread(s)
 ............oooo......oooo.....
@@ -115,11 +117,13 @@ It is recommended (but not required) to keep already processed jingle WAV files 
 
 
 ```
-(advent-pyenv) $ advent
+(advent-pyenv) $ advent -t nil
+AdVent v1.1.0
+TV control is nil
 TV starts unmuted
 Started 4 listening thread(s)
 ............ooO
-Hit: [84] FR_6TER_220725_ELEMENTARY1_1
+Hit: FR_6TER_220725_ELEMENTARY1_1
 TV muted
 oo...
 (Ctrl-C or Ctrl-\)
