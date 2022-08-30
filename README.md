@@ -54,7 +54,7 @@ Example below is given for Linux Fedora, AdVent configured to listen to PulseAud
 
 ### Step 1: Record TV Audio Containing Ads
 
-Usually the simplest way not requiring messing up with cables is to record a portion of a TV broadcast from Internet. As far as possible, stick to the same audio source that you will be using when running AdVent. If you have got a choice between analog and digital recording, always prefer digital. Stereo sources are OK and even preferred (Dejavu will treat them as two-in-one).
+As far as possible, stick to the same audio source that you will be using when running AdVent. Usually the simplest way not requiring messing up with cables is to record a portion of a TV broadcast from Internet. If you have got a choice between analog and digital recording, always prefer digital. Stereo sources are OK and even preferred (Dejavu will treat them as two-in-one).
 
 Preferred audio format to produce is PCM (WAV), 16 bit low endian signed, 44.1 kHz, 2 channels (stereo). Many audio tools will produce this by default. Other formats or parameters have not been tested and may or may not work.
 
@@ -78,7 +78,7 @@ You can also use recorder of your choice, including Audacity. The file name is n
 
 ### Step 2: Single Out a Jingle of Interest
 
-Load the recording into Audacity: `File` > `Open...`. Seek through the track to locate the ad jingle; use zoom if needed. Select the desired interval by clicking in the track area on the jingle start and dragging mouse to the jingle end. Whenever possible, keep your jingle record at least three seconds long (two seconds is acceptable; below that it might not be detected reliably). If a jingle is surrounded with silent periods, you can include short parts of those before and after in order to improve detection. Take a note of jingle position (before or after the ads).
+Load the recording into Audacity: `File` > `Open...`. Seek through the track to locate the ad jingle; use zoom if needed. Select the desired interval by clicking in the track area on the jingle start and dragging mouse to the jingle end. Whenever possible, keep your jingle record at least three seconds long (two seconds is acceptable; below that it might not be detected reliably). If a jingle is surrounded with silent periods, you can include short parts of those before and after. Take a note of jingle position (before or after the ads).
 
 ![Selecting a jingle in Audacity](https://user-images.githubusercontent.com/22733222/184440958-9c4f2b8a-0f34-4633-8c2a-840dbe57ff9f.png)
 
@@ -86,16 +86,17 @@ At this point is it recommended to test the jingle with AdVent to make sure that
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.1.0
+AdVent v1.3.0
 TV control is nil
 TV starts unmuted
+Recognition interval is 3 s with confidence of 5%
 Started 4 listening thread(s)
-............oooo......oooo.....
+....:::oooo:o.::ooooo:.......
 (Ctrl-C or Ctrl-\)
 (advent-pyenv) $ 
 ```
 
-If AdVent does not detect your jingle during playback, you are good to continue. Trim the track: `Edit` > `Remove Special` > `Trim Audio`; then shift the result to the beginning: `Tracks` > `Align Tracks` > `Start to Zero`. Export the track: `File` > `Export` > `Export as WAV`. Give it a name as per naming convention [described below](#jingle-naming-convention) (in this case it would be something like `FR_6TER_220725_ELEMENTARY1_1.wav`); leave the encoding `Signed 16-bit PCM` (default). No need to fill any metadata; just click `OK`.
+If AdVent does not detect your jingle during playback (no "hit" printed), you are good to continue. Trim the track: `Edit` > `Remove Special` > `Trim Audio`; then shift the result to the beginning: `Tracks` > `Align Tracks` > `Start to Zero`. Export the track: `File` > `Export` > `Export as WAV`. Give it a name as per naming convention [described below](#jingle-naming-convention) (in this case it would be something like `FR_6TER_220725_ELEMENTARY1_1.wav`); leave the encoding `Signed 16-bit PCM` (default). No need to fill any metadata; just click `OK`.
 
 ### Step 3: Generate a Hash
 
@@ -118,14 +119,15 @@ It is recommended (but not required) to keep already processed jingle WAV files 
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.1.0
+AdVent v1.3.0
 TV control is nil
 TV starts unmuted
+Recognition interval is 3 s with confidence of 5%
 Started 4 listening thread(s)
-............ooO
+....:::oO
 Hit: FR_6TER_220725_ELEMENTARY1_1
 TV muted
-oo...
+OOOo...
 (Ctrl-C or Ctrl-\)
 (advent-pyenv) $ 
 ```
