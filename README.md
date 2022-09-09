@@ -112,7 +112,7 @@ Finished channel 2/2 for ./FR_6TER_220725_ELEMENTARY1_1.wav
 (advent-pyenv) $ 
 ```
 
-It is recommended (but not required) to keep already processed jingle WAV files around in the case fingerprinting needs to be reexecuted. Dejavu will recognize and skip records which have already been submitted.
+It is recommended (but not required) to keep already processed jingle WAV files around in the case fingerprinting needs to be reexecuted. You can re-submit the entire folders many times; Dejavu will recognize and skip records which have already been submitted.
 
 (optional) At this point you can run AdVent again and press `Play` in Audacity; AdVent should now recognize the track:
 
@@ -186,11 +186,11 @@ The remaining lines are individual fingerprints. Their number should correspond 
 ```
 `offset` is a fingerprint offset inside the jingle. `hash` is a fingerprint itself. It is normal to have several fingerprints for the same offset. The order of the fingerprint lines in the file is not important; for reproducibility of export they are ordered on save.
 
-Example of a file `FR_TF1_220205_EVENING1_2.djv`:
+Example of a file `FR_6TER_220725_ELEMENTARY1_1.djv`:
 ```
 djv,1
-FR_TF1_220205_EVENING1_2,1,8cf22931d2f8cbfb9439fc0eb6a123bb679b6b16,227
-6,138160992563d4b07bb7
-6,541d5e0da358554a10da
-(.. 225 more lines ..)
+FR_6TER_220725_ELEMENTARY1_1,1,72e621563a21a344ead619ef6bfe14fa6a2d219c,13349
+0,1d65a451ac6be35206b8
+0,2b4157cae1e958cfe6e7
+(.. 13347 more lines ..)
 ```
