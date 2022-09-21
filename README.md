@@ -86,13 +86,12 @@ At this point is it recommended to test the jingle with AdVent to make sure that
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.3.0
-TV control is nil
-TV starts unmuted
-Recognition interval is 3 s with confidence of 5%
+AdVent v1.4.0
+TV control is nil with action 'mute' for 600 s max
+Recognition interval is 3 s with confidence of 10%
 Started 4 listening thread(s)
 ....:::oooo:o.::ooooo:.......
-(Ctrl-C or Ctrl-\)
+(Ctrl-C twice or Ctrl-\)
 (advent-pyenv) $ 
 ```
 
@@ -119,16 +118,15 @@ It is recommended (but not required) to keep already processed jingle WAV files 
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.3.0
-TV control is nil
-TV starts unmuted
-Recognition interval is 3 s with confidence of 5%
+AdVent v1.4.0
+TV control is nil with action 'mute' for 600 s max
+Recognition interval is 3 s with confidence of 10%
 Started 4 listening thread(s)
 ....:::oO
 Hit: FR_6TER_220725_ELEMENTARY1_1
 TV muted
 OOOo...
-(Ctrl-C or Ctrl-\)
+(Ctrl-C twice or Ctrl-\)
 (advent-pyenv) $ 
 ```
 
@@ -154,8 +152,8 @@ FR_TF1_220214_EVENING1_3.djv
 3. Jingle capture date YYMMDD (approximate if unsure)
 4. Jingle name (free format, alphanumeric)
 5. Binary flags in decimal
-   1. 0x1 - Jingle starts the ads (0 if unknown)
-   2. 0x2 - Jingle ends the ads (0 if unknown)
+   1. 0x1 - Jingle starts the ads (1 if unsure)
+   2. 0x2 - Jingle ends the ads (1 if unsure)
    3. ...
 6. File extension indicates recognizer provider
    1. djv - [Dejavu](https://github.com/denis-stepanov/dejavu)
