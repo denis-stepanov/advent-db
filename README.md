@@ -113,7 +113,7 @@ Finished channel 2/2 for ./FR_6TER_220725_ELEMENTARY1_1.wav
 
 It is recommended (but not required) to keep already processed jingle WAV files around in the case fingerprinting needs to be reexecuted. You can re-submit the entire folders many times; Dejavu will recognize and skip records which have already been submitted.
 
-(optional) At this point you can run AdVent again and press `Play` in Audacity; AdVent should now recognize the track:
+(optional) At this point you can undo your changes in Audacity (press Ctrl-Z twice), run AdVent again and press `Play` in Audacity; AdVent should now recognize the track:
 
 
 ```
