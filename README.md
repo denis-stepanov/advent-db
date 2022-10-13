@@ -138,6 +138,16 @@ FR_6TER_220725_ELEMENTARY1_1
 (advent-pyenv) $ 
 ```
 
+(optional) Check the number of fingerprints generated for the jingle:
+
+```
+(advent-pyenv) $ wc -l FR_6TER_220725_ELEMENTARY1_1.djv
+13351 FR_6TER_220725_ELEMENTARY1_1.djv
+(advent-pyenv) $ 
+```
+
+A good jingle might have 5000 or more fingerprints. Unfortunately, you do not have much freedom here, as the number of fingerprints would depend on the length of the jingle and of its sound "richness". Jingles with fewer than 500 fingerprints should not be let into a shared database, as they would often result in false positives. Jingles with 500 - 1000 fingerprints are in the risk zone.
+
 If you consider that your hashes could be of use for others, please submit a pull request. Make sure you follow the folder structure defined in this repository and the file naming conventions.
 
 ## Jingle Naming Convention
