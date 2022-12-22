@@ -21,19 +21,17 @@ To pull the latest updates into your database:
 (advent-pyenv) $ cd advent-db/DB
 ```
 
-2. (recommended) delete countries or TV channels you are not expected to use. This will decrease CPU load and reduce the number of false positives while running AdVent:
+2. (recommended) Delete countries or TV channels you are not expected to watch. This will decrease CPU load and reduce the number of false positives while running AdVent:
 
 ```
 (advent-pyenv) $ rm -r VA # ....
 ```
 
-3. Update or import your database:
+3. Import the update:
 
 ```
-(advent-pyenv) $ find . -name "*.djv" | xargs db-djv-pg import
+(advent-pyenv) $ db-djv-pg import -s .
 ```
-
-If your want to overwrite existing definitions (slower), add `-o` to the end of the import command.
 
 ## If You Want to Create Your Own Hashes, Read Further
 
@@ -86,10 +84,10 @@ At this point is it recommended to test the jingle with AdVent to make sure that
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.4.0
+AdVent v1.5.0
 TV control is nil with action 'mute' for 600 s max
-Recognition interval is 3 s with confidence of 10%
-Started 4 listening thread(s)
+Recognition interval is 2 s with confidence of 10%
+Started 2 listening thread(s)
 ....:::oooo:o.::ooooo:.......
 (Ctrl-C twice or Ctrl-\)
 (advent-pyenv) $ 
@@ -118,10 +116,10 @@ It is recommended (but not required) to keep already processed jingle WAV files 
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.4.0
+AdVent v1.5.0
 TV control is nil with action 'mute' for 600 s max
-Recognition interval is 3 s with confidence of 10%
-Started 4 listening thread(s)
+Recognition interval is 2 s with confidence of 10%
+Started 2 listening thread(s)
 ....:::oO
 Hit: FR_6TER_220725_ELEMENTARY1_1
 TV muted
