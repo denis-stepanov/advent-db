@@ -2,6 +2,35 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
+## Database v20230325
+
+```
+(advent-pyenv) $ db-djv-pg dbinfo
+Dejavu database info:
+  Fingerprinted / total tracks = 219 / 219
+  Peak groups                  = 63527 (avg. ~= 290 per track)
+  Fingerprints                 = 1689753 (avg. ~= 7716 per track)
+  Total fingerprinted time    ~= 1002 s (avg. ~= 4.6 s per track)
+  Database size               ~= 252 MB (avg. ~= 1.15 MB per track)
+  Fingerprinting frequency    ~= 1686 Hz (~= 3.82% of sampling frequency 44100 Hz)
+  Hash size                    = 10 B
+  Hash collisions             ~= 30.49%
+  First update                ~= 2022-12-21 13:42:21
+  Last update                 ~= 2023-03-25 22:37:40
+  Last vacuum                 ~= 2023-03-25 21:39:16
+
+AdVent database info:
+  Countries                    = 1
+  TV channels                  = 11 (avg. ~= 11 per country)
+  Jingles                      = 219 (avg. ~= 20 per TV channel)
+  Pure entry / entry jingles   = 61 / 146
+  Pure exit / exit jingles     = 73 / 158
+  No action jingles            = 0
+  Time coverage from           = 2022-02-05
+  Time coverage till           = 2023-03-24
+(advent-pyenv) $
+```
+
 ## Database Population or Update for Regular Users
 
 It is assumed that you have [installed AdVent](https://github.com/denis-stepanov/advent#installation). Make sure to switch to its virtual environment:
