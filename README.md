@@ -62,6 +62,8 @@ To pull the latest updates into your database:
 (advent-pyenv) $ db-djv-pg import -s .
 ```
 
+Import might take a few minutes (depending on how much your database is out of sync).
+
 ## If You Want to Create Your Own Hashes, Read Further
 
 You will need:
