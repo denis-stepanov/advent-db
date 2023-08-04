@@ -1,0 +1,1 @@
+If you consider that your hashes could be of use for others, please submit a pull request. Make sure you follow the folder structure defined in this repository and the [file naming conventions](https://github.com/denis-stepanov/advent-db#jingle-naming-convention).
