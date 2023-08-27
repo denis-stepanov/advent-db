@@ -2,7 +2,7 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
-## Database v20230804
+## Database v20230827
 
 ```
 (advent-pyenv) $ db-djv-pg dbinfo
