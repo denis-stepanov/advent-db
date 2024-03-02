@@ -2,32 +2,32 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
-## Database v20240209
+## Database v20240302
 
 ```
 (advent-pyenv) $ db-djv-pg dbinfo
 Dejavu database info:
-  Fingerprinted / total tracks = 337 / 337
-  Peak groups                  = 107458 (avg. ~= 319 per track)
-  Fingerprints                 = 2881418 (avg. ~= 8550 per track)
-  Total fingerprinted time    ~= 1626 s (avg. ~= 4.8 s per track)
-  Database size               ~= 401 MB (avg. ~= 1.19 MB per track)
+  Fingerprinted / total tracks = 341 / 341
+  Peak groups                  = 108926 (avg. ~= 319 per track)
+  Fingerprints                 = 2921782 (avg. ~= 8568 per track)
+  Total fingerprinted time    ~= 1649 s (avg. ~= 4.8 s per track)
+  Database size               ~= 406 MB (avg. ~= 1.19 MB per track)
   Fingerprinting frequency    ~= 1772 Hz (~= 4.02% of sampling frequency 44100 Hz)
   Hash size                    = 10 B
-  Hash collisions             ~= 39.07%
+  Hash collisions             ~= 39.35%
   First update                ~= 2023-05-06 00:40:23
-  Last update                 ~= 2024-02-09 23:17:54
-  Last vacuum                 ~= 2024-02-09 22:53:39
+  Last update                 ~= 2024-03-02 22:00:22
+  Last vacuum                 ~= 2024-03-02 21:34:32
 
 AdVent database info:
   Countries                    = 1
   TV channels                  = 12 (avg. ~= 12 per country)
-  Jingles                      = 337 (avg. ~= 28 per TV channel)
-  Pure entry / entry jingles   = 86 / 229
-  Pure exit / exit jingles     = 108 / 251
+  Jingles                      = 341 (avg. ~= 28 per TV channel)
+  Pure entry / entry jingles   = 87 / 231
+  Pure exit / exit jingles     = 110 / 254
   No action jingles            = 0
   Time coverage from           = 2022-02-05
-  Time coverage till           = 2024-02-08
+  Time coverage till           = 2024-02-27
 (advent-pyenv) $
 ```
 
