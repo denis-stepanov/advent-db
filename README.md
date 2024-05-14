@@ -115,16 +115,18 @@ At this point is it recommended to test the jingle with AdVent to make sure that
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.5.0
-TV control is nil with action 'mute' for 600 s max
+AdVent v1.6.0
+TV control is nil with action 'mute' for 600 s max and 1 exit jingle
+TV status: unmuted, volume: 100
 Recognition interval is 2 s with confidence of 10%
 Started 2 listening thread(s)
+Type 'h' for help
 ....:::oooo:o.::ooooo:.......
-(Ctrl-C twice or Ctrl-\)
-(advent-pyenv) $ 
 ```
 
 If AdVent does not detect your jingle during playback (no "hit" printed), you are good to continue. Trim the track: `Edit` > `Remove Special` > `Trim Audio`; then shift the result to the beginning: `Tracks` > `Align Tracks` > `Start to Zero`. Export the track: `File` > `Export` > `Export as WAV`. Give it a name as per naming convention [described below](#jingle-naming-convention) (in this case it would be something like `FR_6TER_220725_ELEMENTARY1_1.wav`); leave the encoding `Signed 16-bit PCM` (default). No need to fill any metadata; just click `OK`.
+
+You can leave AdVent running till the end of the session; it will seamlessly pick up changes in database.
 
 ### Step 3: Generate a Hash
 
@@ -142,40 +144,25 @@ Finished channel 2/2 for ./FR_6TER_220725_ELEMENTARY1_1.wav
 
 It is recommended (but not required) to keep already processed jingle WAV files around in the case fingerprinting needs to be reexecuted. You can re-submit the entire folders many times; Dejavu will recognize and skip records which have already been submitted.
 
-(optional) At this point you can undo your changes in Audacity (press Ctrl-Z twice), run AdVent again and press `Play` in Audacity; AdVent should now recognize the track:
+(optional) At this point you can undo your changes in Audacity (press Ctrl-Z twice) and press `Play`; AdVent running in background should now recognize the track:
 
 
 ```
-(advent-pyenv) $ advent -t nil
-AdVent v1.5.0
-TV control is nil with action 'mute' for 600 s max
-Recognition interval is 2 s with confidence of 10%
-Started 2 listening thread(s)
 ....:::oO
 Hit: FR_6TER_220725_ELEMENTARY1_1
 TV muted
 OOOo...
-(Ctrl-C twice or Ctrl-\)
-(advent-pyenv) $ 
 ```
 
 Export the hash from the database for future use:
 
 ```
 (advent-pyenv) $ db-djv-pg export FR_6TER_220725_ELEMENTARY1_1
-FR_6TER_220725_ELEMENTARY1_1
+FR_6TER_220725_ELEMENTARY1_1 13349
 (advent-pyenv) $ 
 ```
 
-(optional) Check the number of fingerprints generated for the jingle:
-
-```
-(advent-pyenv) $ wc -l FR_6TER_220725_ELEMENTARY1_1.djv
-13351 FR_6TER_220725_ELEMENTARY1_1.djv
-(advent-pyenv) $ 
-```
-
-A good jingle might have 5000 or more fingerprints. Unfortunately, you do not have much freedom here, as the number of fingerprints would depend on the length of the jingle and of its sound "richness". Jingles with fewer than 500 fingerprints should not be let into a shared database, as they would often result in false positives. Jingles with 500 - 1000 fingerprints are in the risk zone.
+Check the number printed which is a number of fingerprints in the jingle. A good jingle might have 5000 or more fingerprints. Unfortunately, you do not have much freedom here, as the number of fingerprints would depend on the length of the jingle and of its sound "richness". Jingles with fewer than 500 fingerprints should not be let into a shared database, as they would often result in false positives. Jingles with 500 - 1000 fingerprints are in the risk zone.
 
 If you consider that your hashes could be of use for others, please submit a pull request. Make sure you follow the folder structure defined in this repository and the file naming conventions.
 
