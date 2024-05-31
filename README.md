@@ -69,12 +69,14 @@ Import might take a few minutes (depending on how much your database is out of s
 Some TV channels are known to use multiple jingles during ad breaks (e.g., `1-2-3` instead of regular `1-2`), at least in prime time. While this information could potentially be added to the database, currently it is not provided. You need to pass the number of exit jingles (`1` by default) to AdVent using its `-j` option, or dynamically at run-time using `j` / `J` keys. The table below lists affected channels and their preferences.
 
 <table>
-  <tr><th>TV Channel</th><th>N of Exit Jingles (-j)</th></tr>
-  <tr><td>FR/RMCSTORY</td><td>2</td></tr>
-  <tr><td>FR/TF1</td><td>2</td></tr>
-  <tr><td>FR/TF1SERIESFILMS</td><td>2</td></tr>
-  <tr><td>FR/TFX</td><td>2</td></tr>
-  <tr><td>FR/TMC</td><td>2</td></tr>
+  <tr><th>TV Channel</th><th>Jingle Pattern</th><th>N of Exit Jingles (-j)</th></tr>
+  <tr><td>FR/M6</td><td>1-2<br/>1-2-3</td><td>1<br/>2</td></tr>
+  <tr><td>FR/RMCSTORY</td><td>1-2-3</td><td>2</td></tr>
+  <tr><td>FR/TF1</td><td>1-2-3</td><td>2</td></tr>
+  <tr><td>FR/TF1SERIESFILMS</td><td>1-2-3</td><td>2</td></tr>
+  <tr><td>FR/TFX</td><td>1-2+3-4</td><td>2</td></tr>
+  <tr><td>FR/TMC</td><td>1-2-3</td><td>2</td></tr>
+  <tr><td>FR/W9</td><td>1-2-3</td><td>2</td></tr>
 </table>
 
 ## If You Want to Create Your Own Hashes, Read Further
