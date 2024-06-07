@@ -2,29 +2,29 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
-## Database v20240531
+## Database v20240607
 
 ```
 (advent-pyenv) $ db-djv-pg dbinfo
 Dejavu database info:
-  Fingerprinted / total tracks = 389 / 389
-  Peak groups                  = 124207 (avg. ~= 319 per track)
-  Fingerprints                 = 3332995 (avg. ~= 8568 per track)
-  Total fingerprinted time    ~= 1887 s (avg. ~= 4.9 s per track)
-  Database size               ~= 479 MB (avg. ~= 1.23 MB per track)
-  Fingerprinting frequency    ~= 1766 Hz (~= 4.01% of sampling frequency 44100 Hz)
+  Fingerprinted / total tracks = 386 / 386
+  Peak groups                  = 123908 (avg. ~= 321 per track)
+  Fingerprints                 = 3328311 (avg. ~= 8623 per track)
+  Total fingerprinted time    ~= 1877 s (avg. ~= 4.9 s per track)
+  Database size               ~= 479 MB (avg. ~= 1.24 MB per track)
+  Fingerprinting frequency    ~= 1773 Hz (~= 4.02% of sampling frequency 44100 Hz)
   Hash size                    = 10 B
-  Hash collisions             ~= 42.17%
+  Hash collisions             ~= 42.13%
   First update                ~= 2024-05-14 00:02:17
   Last update                 ~= 2024-05-31 22:09:19
-  Last vacuum                 ~= 2024-05-31 21:54:01
+  Last vacuum                 ~= 2024-06-07 22:14:37
 
 AdVent database info:
   Countries                    = 1
   TV channels                  = 13 (avg. ~= 13 per country)
-  Jingles                      = 389 (avg. ~= 30 per TV channel)
-  Pure entry / entry jingles   = 90 / 275
-  Pure exit / exit jingles     = 114 / 299
+  Jingles                      = 386 (avg. ~= 30 per TV channel)
+  Pure entry / entry jingles   = 89 / 273
+  Pure exit / exit jingles     = 113 / 297
   No action jingles            = 0
   Time coverage from           = 2022-02-05
   Time coverage till           = 2024-05-24
@@ -130,7 +130,7 @@ At this point is it recommended to test the jingle with AdVent to make sure that
 
 ```
 (advent-pyenv) $ advent -t nil
-AdVent v1.6.0
+AdVent v1.6.1
 TV control is nil with action 'mute' for 600 s max and 1 exit jingle
 TV status: unmuted, volume: 100
 Recognition interval is 2 s with confidence of 10%
