@@ -2,32 +2,32 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
-## Database v20250119
+## Database v20250131
 
 ```
 (advent-pyenv) $ db-djv-pg dbinfo
 Dejavu database info:
-  Fingerprinted / total tracks = 448 / 448
-  Peak groups                  = 142019 (avg. ~= 317 per track)
-  Fingerprints                 = 3826382 (avg. ~= 8541 per track)
-  Total fingerprinted time    ~= 2137 s (avg. ~= 4.8 s per track)
-  Database size               ~= 560 MB (avg. ~= 1.25 MB per track)
-  Fingerprinting frequency    ~= 1791 Hz (~= 4.06% of sampling frequency 44100 Hz)
+  Fingerprinted / total tracks = 452 / 452
+  Peak groups                  = 144080 (avg. ~= 319 per track)
+  Fingerprints                 = 3889647 (avg. ~= 8605 per track)
+  Total fingerprinted time    ~= 2165 s (avg. ~= 4.8 s per track)
+  Database size               ~= 567 MB (avg. ~= 1.25 MB per track)
+  Fingerprinting frequency    ~= 1797 Hz (~= 4.07% of sampling frequency 44100 Hz)
   Hash size                    = 10 B
-  Hash collisions             ~= 44.78%
+  Hash collisions             ~= 45.12%
   First update                ~= 2024-05-14 00:02:17
-  Last update                 ~= 2025-01-19 00:55:08
-  Last vacuum                 ~= 2025-01-19 00:45:43
+  Last update                 ~= 2025-01-31 23:52:28
+  Last vacuum                 ~= 2025-01-31 23:29:58
 
 AdVent database info:
   Countries                    = 1
-  TV channels                  = 14 (avg. ~= 14 per country)
-  Jingles                      = 448 (avg. ~= 32 per TV channel)
-  Pure entry / entry jingles   = 99 / 320
-  Pure exit / exit jingles     = 128 / 349
+  TV channels                  = 15 (avg. ~= 15 per country)
+  Jingles                      = 452 (avg. ~= 30 per TV channel)
+  Pure entry / entry jingles   = 99 / 326
+  Pure exit / exit jingles     = 126 / 353
   No action jingles            = 0
   Time coverage from           = 2022-02-05
-  Time coverage till           = 2025-01-17
+  Time coverage till           = 2025-01-28
 (advent-pyenv) $
 ```
 
