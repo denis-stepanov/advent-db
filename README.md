@@ -2,32 +2,32 @@
 
 This is a database for [AdVent](https://github.com/denis-stepanov/advent), the TV ads arrestor. For a description of how AdVent works, refer to its repository. This repository contains a database of TV jingle hashes. These are used by AdVent in order to decide when the ads sound has to be cut.
 
-## Database v20250617
+## Database v20250626
 
 ```
 (advent-pyenv) $ db-djv-pg dbinfo
 Dejavu database info:
-  Fingerprinted / total tracks = 431 / 431
-  Peak groups                  = 136634 (avg. ~= 317 per track)
-  Fingerprints                 = 3691427 (avg. ~= 8565 per track)
-  Total fingerprinted time    ~= 2051 s (avg. ~= 4.8 s per track)
+  Fingerprinted / total tracks = 432 / 432
+  Peak groups                  = 136828 (avg. ~= 317 per track)
+  Fingerprints                 = 3696065 (avg. ~= 8556 per track)
+  Total fingerprinted time    ~= 2053 s (avg. ~= 4.8 s per track)
   Database size               ~= 517 MB (avg. ~= 1.2 MB per track)
   Fingerprinting frequency    ~= 1800 Hz (~= 4.08% of sampling frequency 44100 Hz)
   Hash size                    = 10 B
-  Hash collisions             ~= 44.24%
+  Hash collisions             ~= 44.26%
   First update                ~= 2025-04-20 21:56:36
-  Last update                 ~= 2025-06-17 22:53:54
-  Last vacuum                 ~= None
+  Last update                 ~= 2025-06-26 21:45:30
+  Last vacuum                 ~= 2025-06-26 21:58:30
 
 AdVent database info:
   Countries                    = 1
   TV channels                  = 13 (avg. ~= 13 per country)
-  Jingles                      = 431 (avg. ~= 33 per TV channel)
-  Pure entry / entry jingles   = 88 / 318
-  Pure exit / exit jingles     = 113 / 343
+  Jingles                      = 432 (avg. ~= 33 per TV channel)
+  Pure entry / entry jingles   = 88 / 321
+  Pure exit / exit jingles     = 111 / 344
   No action jingles            = 0
   Time coverage from           = 2022-02-05
-  Time coverage till           = 2025-05-24
+  Time coverage till           = 2025-06-22
 (advent-pyenv) $
 ```
 
